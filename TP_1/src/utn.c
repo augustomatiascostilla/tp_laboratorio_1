@@ -70,7 +70,7 @@ int utn_getFloat(float* pResultado, char* mensaje, char* error, float min, float
 int ObtenerKM(int* pResultado){
 	int ret=0, buffer;
 	if(utn_getInt(&buffer, "Ingrese los kilometros recorridos en el vuelo...\n",
-			"Error! fuera de rango, vuelva a intentarlo\n", 2, 15000, 4)==0)
+			"Error! fuera de rango [2-15000], vuelva a intentarlo\n", 2, 15000, 4)==0)
 	{
 		ret=1;
 		*pResultado=buffer;
@@ -84,7 +84,7 @@ int ObtenerPrecios(float* pResultado, char* msje){
 	int ret=0;
 	float buffer;
 	if(utn_getFloat(&buffer, msje,
-			"Error! fuera del rango de precios, vuelva a intentarlo\n", 1000.0, 30000.0, 4)==0)
+			"Error! fuera del rango de precios [1000-30000], vuelva a intentarlo\n", 1000.0, 30000.0, 4)==0)
 	{
 		ret=1;
 		*pResultado=buffer;
